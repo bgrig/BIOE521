@@ -1,3 +1,5 @@
+#! /usr/bin/python
+
 string1 = "Hello, world."
 if re.search(r".....", string1):
     print string1 + " has length >= 5"
@@ -6,7 +8,7 @@ if re.search(r".....", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 m_obj = re.search(r"(H..).(o..)", string1)
@@ -16,7 +18,7 @@ if m_obj:
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"l+", string1):
@@ -26,7 +28,7 @@ if re.search(r"l+", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"H.?e", string1):
@@ -36,7 +38,7 @@ if re.search(r"H.?e", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"l.+?o", string1):
@@ -46,7 +48,7 @@ if re.search(r"l.+?o", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"el*o", string1):
@@ -56,7 +58,7 @@ if re.search(r"el*o", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"l{1,2}", string1):
@@ -66,7 +68,7 @@ if re.search(r"l{1,2}", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"[aeiou]+", string1):
@@ -76,7 +78,7 @@ if re.search(r"[aeiou]+", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello, world."
 if re.search(r"(Hello|Hi|Pogo)", string1):
@@ -86,7 +88,7 @@ if re.search(r"(Hello|Hi|Pogo)", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World"
 if re.search(r"llo\b", string1):
@@ -96,7 +98,7 @@ else:
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World"
 m_obj = re.search(r"(\w\w)", string1)
@@ -106,7 +108,7 @@ if m_obj:
     print m_obj.group(1)
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World"
 if re.search(r"\W", string1):
@@ -116,7 +118,7 @@ if re.search(r"\W", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World\n"
 if re.search(r"\s.*\s", string1):
@@ -126,7 +128,7 @@ if re.search(r"\s.*\s", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World\n"
 m_obj = re.search(r"(\S*)\s*(\S*)", string1)
@@ -136,7 +138,7 @@ if m_obj:
 
 
 
-
+#! /usr/bin/python
 
 string1 = "99 bottles of beer on the wall."
 m_obj = re.search(r"(\d+)", string1)
@@ -146,7 +148,7 @@ if m_obj:
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World"
 if re.search(r"\D", string1):
@@ -156,7 +158,7 @@ if re.search(r"\D", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World"
 if re.search(r"^He", string1):
@@ -166,7 +168,7 @@ if re.search(r"^He", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World"
 if re.search(r"rld$", string1):
@@ -176,7 +178,7 @@ if re.search(r"rld$", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello\nWorld\n"
 if re.search(r"\AH", string1):
@@ -186,7 +188,7 @@ if re.search(r"\AH", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello\nWorld\n"
 if re.search(r"d\n\Z", string1):
@@ -196,7 +198,7 @@ if re.search(r"d\n\Z", string1):
 
 
 
-
+#! /usr/bin/python
 
 string1 = "Hello World\n"
 if re.search(r"[^abc]", string1):
