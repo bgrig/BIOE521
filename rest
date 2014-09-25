@@ -1,0 +1,190 @@
+string1 = "Hello, world."
+if re.search(r"l+", string1):
+    print 'There are one or more consecutive letter "l"' +\
+          "'s in " + string1
+
+
+
+
+
+
+string1 = "Hello, world."
+if re.search(r"H.?e", string1):
+    print "There is an 'H' and a 'e' separated by " +\
+          "0-1 characters (Ex: He Hoe)\n"
+          
+
+
+
+
+
+string1 = "Hello, world."
+if re.search(r"l.+?o", string1):
+    print "The non-greedy match with 'l' followed by\n" +\
+          "one or more characters is 'llo' rather than\n" +\
+          "'llo wo'."
+
+
+
+
+
+string1 = "Hello, world."
+if re.search(r"el*o", string1):
+    print "There is an 'e' followed by zero to many\n" +\
+          "'l' followed by 'o' (eo, elo, ello, elllo)"
+
+
+
+
+
+
+string1 = "Hello, world."
+if re.search(r"l{1,2}", string1):
+    print "There exists a substring with at least 1\n" +\
+          "and at most 2 l's in " + string1
+
+
+
+
+
+
+string1 = "Hello, world."
+if re.search(r"[aeiou]+", string1):
+    print string1 + " contains one or more vowels."
+
+
+
+
+
+
+
+string1 = "Hello, world."
+if re.search(r"(Hello|Hi|Pogo)", string1):
+    print "At least one of Hello, Hi, or Pogo is " +\
+          "contained in " + string
+
+
+
+
+
+
+string1 = "Hello World"
+if re.search(r"llo\b", string1):
+    print "There is a word that ends with 'llo'"
+else:
+    print "There are no words that end with 'llo'"
+
+
+
+
+
+string1 = "Hello World"
+m_obj = re.search(r"(\w\w)", string1)
+if m_obj:
+    print "The first two adjacent alphanumeric characters"
+    print "(A-Z, a-z, 0-9, _) in", string1, "were",
+    print m_obj.group(1)
+
+
+
+
+string1 = "Hello World"
+if re.search(r"\W", string1):
+    print "The space between Hello and " +\
+          "World is not alphanumeric"
+
+
+
+
+
+
+string1 = "Hello World\n"
+if re.search(r"\s.*\s", string1):
+    print "There are TWO whitespace characters, which may"
+    print "be separated by other characters, in", string1
+
+
+
+
+
+
+string1 = "Hello World\n"
+m_obj = re.search(r"(\S*)\s*(\S*)", string1)
+if m_obj:
+    print "The first two groups of NON-whitespace characters"
+    print "are '%s' and '%s'." % m_obj.groups()
+
+
+
+
+
+string1 = "99 bottles of beer on the wall."
+m_obj = re.search(r"(\d+)", string1)
+if m_obj:
+    print m_obj.group(1), "is the first number in '" +\
+                          string1 + "'"
+
+
+
+
+
+string1 = "Hello World"
+if re.search(r"\D", string1):
+    print "There is at least one character in", string1,
+    print "that is not a digit."
+
+
+
+
+
+
+string1 = "Hello World"
+if re.search(r"^He", string1):
+    print string1, "starts with the characters 'He'"
+
+
+
+
+
+
+
+string1 = "Hello World"
+if re.search(r"rld$", string1):
+    print string1, "is a line or string " +\
+          "that ends with 'rld'"
+
+
+
+
+
+
+string1 = "Hello\nWorld\n"
+if re.search(r"\AH", string1):
+    print string1, "is a string",
+    print "that starts with 'H'"
+
+
+
+
+
+
+string1 = "Hello\nWorld\n"
+if re.search(r"d\n\Z", string1):
+    print string1, "is a string",
+    print "that ends with 'd\\n'"
+
+
+
+
+
+
+string1 = "Hello World\n"
+if re.search(r"[^abc]", string1):
+    print string1 + " contains a character other than " +\
+          "a, b, and c"
+
+
+
+
+
+
