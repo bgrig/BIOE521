@@ -9,6 +9,16 @@ if re.search(r".....", string1):
 
 
 string1 = "Hello, world."
+m_obj = re.search(r"(H..).(o..)", string1)
+if m_obj:
+    print "We matched '" + m_obj.group(1) +\
+          "' and '" + m_obj.group(2) + "'"
+
+
+
+
+
+string1 = "Hello, world."
 if re.search(r"l+", string1):
     print 'There are one or more consecutive letter "l"' +\
           "'s in " + string1
