@@ -1,4 +1,14 @@
 string1 = "Hello, world."
+if re.search(r".....", string1):
+    print string1 + " has length >= 5"
+
+
+
+
+
+
+
+string1 = "Hello, world."
 if re.search(r"l+", string1):
     print 'There are one or more consecutive letter "l"' +\
           "'s in " + string1
