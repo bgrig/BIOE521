@@ -1,0 +1,108 @@
+import time
+import picamera
+
+with picamera.PiCamera() as camera:
+    camera.resolution = (1024, 768)
+    camera.start_preview()
+    # Camera warm-up time
+    time.sleep(2)
+    camera.capture('foo.jpg', resize=(320, 240))
+
+
+
+
+
+
+
+
+
+
+
+
+import time
+import picamera
+
+with picamera.PiCamera() as camera:
+    camera.resolution = (1280, 720)
+    camera.framerate = 30
+    # Give the camera's auto-exposure and auto-white-balance algorithms
+    # some time to measure the scene and determine appropriate values
+    camera.iso = 200
+    time.sleep(2)
+    # Now fix the values
+    camera.shutter_speed = camera.exposure_speed
+    camera.exposure_mode = 'off'
+    g = camera.awb_gains
+    camera.awb_mode = 'off'
+    camera.awb_gains = g
+    # Finally, take several photos with the fixed settings
+    camera.capture_sequence(['image%02d.jpg' % i for i in range(10)])
+    
+import time
+import picamera
+
+with picamera.PiCamera() as camera:
+    camera.start_preview()
+    time.sleep(2)
+    for filename in camera.capture_continuous('img{counter:03d}.jpg'):
+        print('Captured %s' % filename)
+        time.sleep(300) # wait 5 minutes
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+import time
+import picamera
+from datetime import datetime, timedelta
+
+def wait():
+    # Calculate the delay to the start of the next hour
+    next_hour = (datetime.now() + timedelta(hour=1)).replace(
+        minute=0, second=0, microsecond=0)
+    delay = (next_hour - datetime.now()).seconds
+    time.sleep(delay)
+
+with picamera.PiCamera() as camera:
+    camera.start_preview()
+    wait()
+    for filename in camera.capture_continuous('img{timestamp:%Y-%m-%d-%H-%M}.jpg'):
+        print('Captured %s' % filename)
+        wait()
+  
+  
+  
+import picamera
+from time import sleep
+from fractions import Fraction
+
+with picamera.PiCamera() as camera:
+    camera.resolution = (1280, 720)
+    # Set a framerate of 1/6fps, then set shutter
+    # speed to 6s and ISO to 800
+    camera.framerate = Fraction(1, 6)
+    camera.shutter_speed = 6000000
+    camera.exposure_mode = 'off'
+    camera.iso = 800
+    # Give the camera a good long time to measure AWB
+    # (you may wish to use fixed AWB instead)
+    sleep(10)
+    # Finally, capture an image with a 6s exposure. Due
+    # to mode switching on the still port, this will take
+    # longer than 6 seconds
+    camera.capture('dark.jpg')
+
+import picamera
+
+with picamera.PiCamera() as camera:
+    camera.resolution = (640, 480)
+    camera.start_recording('my_video.h264')
+    camera.wait_recording(60)
+    camera.stop_recording()
+        
